@@ -1,4 +1,7 @@
 $(function() {
+var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+var yearMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
 var clockDiv = document.getElementById('clock');
 var dayDiv = document.getElementById('day-of-week');
 var dateMonthYearDiv = document.getElementById('date-month-year');
@@ -39,11 +42,12 @@ var dateMonthYearDiv = document.getElementById('date-month-year');
         var month = now.getMonth();
         var year = now.getFullYear();
 
-        dayDiv.innerText = "hi what is going on"
+        dayDiv.innerText = weekday[dayOfWeek]
+        dateMonthYearDiv.innerText = day+" "+yearMonths[month] + ", "+ year;
 
     }
 
-
+    setInterval(displayDate, 1000);
     setInterval(displayTime, 1000);
 
 
